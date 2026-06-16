@@ -41,7 +41,7 @@ public class AccountServiceImpl
         return account;
     }
     @Override
-    @Transactional
+    @Transactional(transactionManager = "transactionManager")
     public void debitBalance(
             String accountNumber,
             BigDecimal amount) {
@@ -67,7 +67,7 @@ public class AccountServiceImpl
     }
 
     @Override
-    @Transactional
+    @Transactional(transactionManager = "transactionManager")
     public void creditBalance(
             String accountNumber,
             BigDecimal amount) {
